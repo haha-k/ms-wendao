@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: microservice-wendao-config
+  cloud:
+    config:
+
+
+server:
+  port: 8888

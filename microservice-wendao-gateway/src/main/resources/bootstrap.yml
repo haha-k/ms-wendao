@@ -1,0 +1,22 @@
+## could的配置信息一定要写到bootstrap.yml中
+#spring:
+#  application:
+#    name: microservice-wendao-feed
+#
+## 因为cloud框架会优先读取bootstrap.yml配置文件，如果发现这里面没有这些配置，那么是无法将当前服务注册到注册中心的，这点需要特别注意，服务名也要写到ootstrap.yml文件中哦
+#  cloud:
+#    config:
+#      discovery:
+#        enabled: true   #如果希通过在配置中心找服务名的方式招待配置中心，那么这个属性就要设置成 true  默认false
+#        service-id: microservice-wendao-config #配置中心的服务名
+#      fail-fast: true   #将这个设置成true 表示连接配置中心失败，让程序启动失败
+
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      config:
+        enabled: true
+        format: yaml
+        data-key: data

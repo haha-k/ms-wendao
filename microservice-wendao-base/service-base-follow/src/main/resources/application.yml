@@ -1,0 +1,73 @@
+server:
+  port: 6005
+
+custom:
+  oauth2:
+    grant_type: password
+    client_id: client_id
+    client_secret: secret
+
+spring:
+  application:
+    name: service-base-follow
+  boot:
+    admin:
+      client:
+        url: http://localhost:9001
+  #  security:
+  #    basic:
+  #      enabled: false
+  datasource:
+    name: Wendao
+    url: jdbc:mysql://39.96.221.167:3306/wendao
+    username: root
+    password: yx20
+    driverClassName: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    dbcp2:
+      min-idle: 5
+      initial-size: 5
+      max-total: 5
+      max-wait-millis: 200
+
+# JWT
+jwt:
+  secret: JWTSecret
+  tokenHeader: Authorization
+  tokenprefix: JWT-
+  expiration: 86400
+  access_token: 3600
+  refresh_token: 3600
+  antMatchers: /api/v1/user/login,
+#  route:
+#    authentication:
+#      path: /index/**/login/**,/favicon.ico
+
+# Mybatis-plus
+mybatis-plus:
+  # xml
+  mapper-locations: classpath:mapper/*.xml
+  global-config:
+    db-config:
+      id-type: AUTO
+      field-strategy: NOT_EMPTY
+      db-type: MYSQL
+  configuration:
+    map-underscore-to-camel-case: true
+    call-setters-on-nulls: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+management:
+  #  security:
+  #    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  file:
+    name: logs/service-base-follow.log

@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+//import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +16,6 @@ import reactor.core.publisher.Mono;
 @SpringBootApplication
 @RestController
 @EnableDiscoveryClient
-@EnableEurekaClient
 @Configuration
 public class MicroserviceWendaoGatewayApplication {
 
@@ -29,8 +28,12 @@ public class MicroserviceWendaoGatewayApplication {
     @Bean
     public RouteLocator myRoutes(RouteLocatorBuilder builder){
         return builder.routes()
+//                .route(p -> p
+//                        .path("/api/v1/user/**")
+//                        .uri("http://localhost:6001/user/**")
+//                )
                 .route(p -> p
-                        .path("/hi")
+                        .path("/question")
                         .filters(f -> f.addRequestHeader("Hello","World"))
                         .uri(httpUrl))
                 .route(p -> p
@@ -48,6 +51,4 @@ public class MicroserviceWendaoGatewayApplication {
     public Mono<String> fallback(){
         return Mono.just("fallback");
     }
-
-
 }

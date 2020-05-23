@@ -1,5 +1,5 @@
 server:
-  port: 8760
+  port: 2000
 
 spring:
   application:
@@ -9,24 +9,26 @@ spring:
       discovery:
         locator:
           enabled: true
-          lower-case-service-id: true
+#          lower-case-service-id: true
         routes:
-        - id: microservice-wendao-feed
-          uri: lb://microservice-wendao-feed
+        - id: service-api-feed
+          uri: lb://service-api-feed
           predicates:
             - Path=/feed/**
           filters:
             - StripPrefix=1
-#      routes:
-#        - id: after_route
-#          uri: http://localhost:8763/hi
-#          filters:
-#            - AddRequestHeader=X-Request-Foo, Bar
-#          predicates:
-#            - After=2017-01-20T17:42:47.789-07:00[America/Denver]
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://host1:8761/eureka/
+        - id: service-base-user
+          uri: lb://service-base-user
+          predicates:
+            - Path=/api/v1/user/**
+          filters:
+            - StripPrefix = 2
+            - Custom
+        - id: service-content-qa
+          uri: lb:service-content-qa
+          predicates:
+            - Path=/api/v1/question/**,/api/v1/answer/**
+          filters:
+            - StripPrefix = 2
+#            - Custom
 

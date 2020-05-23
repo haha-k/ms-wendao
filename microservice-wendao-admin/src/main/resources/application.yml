@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: microservice-wendao-admin
+  security:
+    user:
+      name: haha
+      password: 123456
+  boot:
+    admin:
+      discovery:
+        ignored-services: ${spring.application.name}
+
+server:
+  port: 9000

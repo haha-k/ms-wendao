@@ -12,13 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.hahak.servicecommonbase.entity.BaseResponse;
+import com.hahak.servicecommonbase.enums.BaseStatusCode;
 import com.hahak.servicecontentqa.dto.Answer;
 import com.hahak.servicecontentqa.dto.Question;
 import com.hahak.servicecontentqa.service.AnswerService;
 import com.hahak.servicecontentqa.service.QuestionService;
-
-import entity.BaseResponse;
-import enums.BaseStatusCode;
 
 /**
  * @ClassName questionController

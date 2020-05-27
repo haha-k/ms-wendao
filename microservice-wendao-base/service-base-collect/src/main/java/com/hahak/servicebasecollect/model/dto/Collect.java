@@ -1,12 +1,12 @@
-package com.hahak.servicebasecollect.dto;
+package com.hahak.servicebasecollect.model.dto;
 
 import java.io.Serializable;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.hahak.servicecommonbase.entity.CommonEntity;
 
-import entity.CommonEntity;
 import lombok.Data;
 
 /**
@@ -29,7 +29,7 @@ public class Collect extends CommonEntity implements Serializable {
 
     private Integer resourceId;
 
-    private String resourceType;
+    private Integer resourceType;
 
     private Integer collectionId;
 }

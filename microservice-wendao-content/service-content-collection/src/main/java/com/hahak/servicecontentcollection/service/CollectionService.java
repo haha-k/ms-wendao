@@ -2,6 +2,8 @@ package com.hahak.servicecontentcollection.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.hahak.servicecommonbase.vo.CollectVo;
+import com.hahak.servicecontentcollection.dto.Collect;
 import com.hahak.servicecontentcollection.dto.Collection;
 
 /**

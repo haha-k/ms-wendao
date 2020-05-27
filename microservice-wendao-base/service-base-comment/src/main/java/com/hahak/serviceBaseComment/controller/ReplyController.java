@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.hahak.serviceBaseComment.dto.Reply;
 import com.hahak.serviceBaseComment.service.ReplyService;
+import com.hahak.servicecommonbase.entity.BaseResponse;
+import com.hahak.servicecommonbase.enums.BaseStatusCode;
 
-import entity.BaseResponse;
-import enums.BaseStatusCode;
 
 /**
  * @ClassName replyController

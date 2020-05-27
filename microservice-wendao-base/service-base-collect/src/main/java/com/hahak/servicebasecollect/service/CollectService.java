@@ -2,7 +2,8 @@ package com.hahak.servicebasecollect.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.hahak.servicebasecollect.dto.Collect;
+import com.hahak.servicebasecollect.model.dto.Collect;
+import com.hahak.servicecommonbase.vo.CollectVo;
 
 /**
  * @InterfaceName answerService
@@ -12,4 +13,5 @@ import com.hahak.servicebasecollect.dto.Collect;
  * @Version 1.0
  **/
 public interface CollectService extends IService<Collect> {
+    public int postCollect(CollectVo collectVo);
 }

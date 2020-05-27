@@ -48,6 +48,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     //配置AuthorizationServer 端点的非安全属性，
     // 也就是 token 存储方式、token 配置、用户授权模式等。
     // 默认不需做任何配置，除非使用 密码授权方式, 这时候必须配置 AuthenticationManager。
+
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         endpoints.tokenStore(jwtTokenStore)

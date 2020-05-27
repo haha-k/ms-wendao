@@ -1,8 +1,11 @@
 package com.hahak.servicecontentcollection.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.hahak.servicecommonbase.vo.CollectVo;
+import com.hahak.servicecontentcollection.dto.Collect;
 import com.hahak.servicecontentcollection.dto.Collection;
 import com.hahak.servicecontentcollection.mapper.CollectionMapper;
 import com.hahak.servicecontentcollection.service.CollectionService;
@@ -16,4 +19,6 @@ import com.hahak.servicecontentcollection.service.CollectionService;
  **/
 @Service
 public class CollectionServiceImpl extends ServiceImpl<CollectionMapper, Collection> implements CollectionService {
+
+
 }

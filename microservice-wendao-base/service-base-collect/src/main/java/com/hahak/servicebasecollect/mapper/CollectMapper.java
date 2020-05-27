@@ -3,7 +3,7 @@ package com.hahak.servicebasecollect.mapper;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.hahak.servicebasecollect.dto.Collect;
+import com.hahak.servicebasecollect.model.dto.Collect;
 
 
 /**

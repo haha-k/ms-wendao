@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hahak.serviceapimember.feign.MemberServiceClient;
+import com.hahak.servicecommonbase.entity.BaseResponse;
+import com.hahak.servicecommonbase.enums.BaseStatusCode;
 
-import entity.BaseResponse;
-import enums.BaseStatusCode;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -27,10 +27,14 @@ public class MemberController {
     @Autowired
     private MemberServiceClient memberServiceClient;
 
-    @GetMapping("/{memberId}/favlist")
+    @GetMapping("/{memberId}/favlists")
     public BaseResponse getCollection(@PathVariable Integer memberId){
-        memberServiceClient.getCollection(memberId);
-        return new BaseResponse(BaseStatusCode.SUCCESS.getCode(),BaseStatusCode.SUCCESS.getMsg(),true);
+        return memberServiceClient.getCollection(memberId);
+    }
+
+    @GetMapping("/{memberId}/questions")
+    public BaseResponse getQuestion(@PathVariable Integer memberId){
+        return memberServiceClient.getCollection(memberId);
     }
 
 }

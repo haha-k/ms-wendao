@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hahak.serviceapimember.feign.fallback.MemberServiceClientFallbackImpl;
+import com.hahak.servicecommonbase.entity.BaseResponse;
 
 /**
  * @ClassName memberServiceClient
@@ -18,7 +19,7 @@ import com.hahak.serviceapimember.feign.fallback.MemberServiceClientFallbackImpl
 public interface MemberServiceClient {
 
     @GetMapping(value = "/collection")
-    String getCollection(@RequestParam("answerId")Integer answerId);
+    BaseResponse getCollection(@RequestParam("userId")Integer userId);
 
 }
 
